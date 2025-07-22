@@ -1,0 +1,43 @@
+<html>
+
+<head></head>
+
+<body>
+    <textarea id="textBox" rows="5" cols="75" style="resize: none;"></textarea>
+    <br>
+    <button id="result">Show Results</button>
+    <br>
+    <p>Words Count <span><input type="number" id="words-count" disabled></span></p>
+    <br>
+    <p>Vowels Count: <span><input type="number" id="vowels-count" disabled></span></p>
+    <br>
+    <p>Sentence Count <span><input type="number" id="sentence" disabled></span></p>
+
+    <script>
+        function calculate() {
+            // Words
+            const input = textBox.value;
+            const countWords = input.trim().split(/\s+/).length;
+            document.getElementById("words-count").value = countWords;
+            console.log('Word count:', countWords);
+
+            // Vowels
+            function countVowels(input) {
+                const vowels = ['a', 'e', 'i', 'o', 'u'];
+                return input.toLowerCase().split('').filter(char => vowels.includes(char)).length;
+            }
+            console.log('Vowel count:', countVowels(input));
+            document.getElementById("vowels-count").value = countVowels(input);
+            
+            // Sentences
+            const punctuation = [`.`, `,`];
+            const countSentences = input.split('').filter(sen => punctuation.includes(sen)).length;
+            console.log('Number of sentences:', countSentences);
+            document.getElementById("sentence").value = countSentences;
+        }
+
+        document.getElementById('result').addEventListener('click', calculate)
+    </script>
+</body>
+
+</html>
