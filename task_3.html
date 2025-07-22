@@ -1,0 +1,69 @@
+<html>
+
+<head></head>
+
+<body>
+    <input type="url" id="urlBox" placeholder="Input URL">
+    <br>
+    <br>
+    <button id="details">Show URL Details</button>
+    <br>
+    <br>
+    <label for="hash">Hash</label> <input type="text" id="hash">
+    <br>
+    <br>
+    <label for="host">host</label> <input type="text" id="host">
+    <br>
+    <br>
+    <label for="hostname">Host Name</label> <input type="text" id="hostname">
+    <br>
+    <br>
+    <label for="href">Href</label> <input type="text" id="href">
+    <br>
+    <br>
+    <label for="origin">Origin</label> <input type="text" id="origin">
+    <br>
+    <br>
+    <label for="pathname">Path Name</label> <input type="text" id="pathname">
+    <br>
+    <br>
+    <label for="protocol">Protocol</label> <input type="text" id="protocol">
+
+    <script>
+        function displayDetails() {
+            const input = new URL(document.getElementById('urlBox').value);
+
+            // Hash
+            const link_hash = input.hash;
+            document.getElementById('hash').value = link_hash;
+
+            // host
+            const host = input.host;
+            document.getElementById('host').value = host;
+
+            // hostname
+            const hostname = input.hostname;
+            document.getElementById('hostname').value = hostname;
+            
+            // hreft
+            const href = input.href;
+            document.getElementById('href').value = href;
+
+            // origin
+            const origin = input.origin;
+            document.getElementById('origin').value = origin;
+
+            // pathname
+            const pathname = input.pathname;
+            document.getElementById('pathname').value = pathname;
+
+            // protocol
+            const protocol = input.protocol;
+            document.getElementById('protocol').value = protocol;
+        }
+        document.getElementById('details').addEventListener('click', displayDetails);
+    </script>
+
+</body>
+
+</html>
