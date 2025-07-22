@@ -1,0 +1,22 @@
+<html>
+
+<head></head>
+
+<body>
+    <input type="number" id="num">
+    <br>
+    <input type="number" id="output" disabled>
+    <br>
+    <button id="btn">Get Square Root</button>
+
+    <script>
+        function calculateSqrt() {
+            const input = Number(num.value);
+            const sqrt = Math.sqrt(input)
+            output.value = sqrt;
+        }
+        document.getElementById('btn').addEventListener('click', calculateSqrt)      
+    </script>
+</body>
+
+</html>
