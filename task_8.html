@@ -1,0 +1,23 @@
+<html>
+
+<head></head>
+
+<body>
+    <input type="password" id="passwordInput">
+    <br>
+    <input type="checkbox" id="checkBox"> <label for="checkBox">Show password</label>
+    <script>
+        function togglePassword() {
+            let pass = document.getElementById('passwordInput');
+            if (pass.type === "password") {
+                pass.type = "text";
+            }  else {
+                pass.type = "password";
+            }
+        }
+
+        document.getElementById('checkBox').addEventListener('click', togglePassword);
+    </script>
+</body>
+
+</html>

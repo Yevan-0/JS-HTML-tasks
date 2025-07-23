@@ -1,0 +1,23 @@
+<html>
+    <head></head>
+    <body>
+        <textarea  id="inputBox" rows="5" cols="50" placeholder="Enter Text" style="resize: none;"></textarea>
+        <br>
+        <br>
+        <button id="reverseBtn">Reverse Lines</button>
+        <br>
+        <br>
+        <textarea  id="result" rows="5" cols="50" placeholder="Enter Text" style="resize: none;" disabled></textarea>
+
+        <script>
+            function reverse() {
+                const input = document.getElementById('inputBox').value;
+                const sentenceRev = input.split('\n').reverse().join('\n');
+                const output = document.getElementById('result');
+                output.value = sentenceArr;
+            }
+            document.getElementById('reverseBtn').addEventListener('click', reverse);
+        </script>
+
+    </body>
+</html>

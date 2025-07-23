@@ -1,0 +1,30 @@
+<html>
+
+<head></head>
+
+<body>
+    <input type="text" id="word" placeholder="Enter Word.">
+    <br>
+    <button id="btnCheck">Check Palindrome</button>
+    <br>
+    <input type="text" id="result" disabled>
+
+    <script>
+
+
+        function Palindrome() {
+            let inputWord = document.getElementById('word').value.toLowerCase();
+            let checkPalindrome = inputWord.toLowerCase().split('').reverse().join('').toLowerCase();
+            if (inputWord == checkPalindrome) {
+                document.getElementById('result').value = 'Yes';
+                return true
+            }
+            document.getElementById('result').value = 'No';
+            return false
+        }
+
+        document.getElementById('btnCheck').addEventListener('click', Palindrome);
+    </script>
+</body>
+
+</html>

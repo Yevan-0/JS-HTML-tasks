@@ -1,0 +1,37 @@
+<html>
+
+<head></head>
+
+<body>
+    <input type="text" id="input">
+    <br>
+    <br>
+    <button id="checkSize">Find Max and Min</button>
+    <br>
+    <br>
+    <label for="max">Maximum</label> <input type="number" id="max">
+    <br>
+    <br>
+    <label for="min">Minimum</label> <input type="number" id="min">
+
+    <script>
+        function findMaxandMin() {
+            const inputVal = document.getElementById('input').value;
+            const inputArray = inputVal.split(',').map(num => { return parseFloat(num, 10); })
+            console.log(inputArray);
+            const max = inputArray.reduce(function (a, b) {
+                return (a > b) ? a : b;
+            })
+            console.log(max);
+            const min = inputArray.reduce(function (a, b) {
+                return (a < b) ? a : b;
+            })
+            console.log(min);
+                document.getElementById('max').value = max;
+                document.getElementById('min').value = min;
+        }
+        document.getElementById('checkSize').addEventListener('click', findMaxandMin)
+    </script>
+</body>
+
+</html>
