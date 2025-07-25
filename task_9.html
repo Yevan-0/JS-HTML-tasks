@@ -1,0 +1,33 @@
+<html>
+
+<head></head>
+
+<body>
+    <input type="number" id="countBox">
+    <br>
+    <br>
+    <button id="createBtn">Create Element</button>
+    <br>
+    <br>
+    <div id="container"></div>
+
+    <script>
+        function printCount() {
+            const count = document.getElementById('countBox').value;
+            const parent = document.getElementById('container');
+
+            parent.innerHTML = "";
+            for (let i = 0; i <= count; i++) {
+                const btn = document.createElement('button');
+                btn.style.marginRight = "10px";
+                btn.textContent = `No.${i}`;
+                btn.value = i;
+                parent.appendChild(btn);
+            }
+        }
+
+        document.getElementById('createBtn').addEventListener('click', printCount);
+    </script>
+</body>
+
+</html>

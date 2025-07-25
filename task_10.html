@@ -1,0 +1,29 @@
+<html>
+
+<head></head>
+
+<body>
+    <label for="textInput">Element Label</label> <input type="text" id="textInput">
+    <br>
+    <br>
+    <button id="createEleBtn">Create Element</button>
+    <br>
+    <div id="container"></div>
+    <br>
+
+    <script>
+        function createElement() {
+            const inputName = document.getElementById('textInput').value;
+            const parent = document.getElementById('container');
+            const elementBtn = document.createElement('button');
+            elementBtn.style.marginTop = "10px";
+            elementBtn.style.marginRight= "10px";
+            elementBtn.textContent = inputName;
+            parent.appendChild(elementBtn);
+        }
+        document.getElementById('createEleBtn').addEventListener('click', createElement);
+    </script>
+
+</body>
+
+</html>
